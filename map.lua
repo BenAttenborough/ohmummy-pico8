@@ -4,8 +4,6 @@ end
 
 function is_tile(tile_type,x,y)
     tile=mget(x,y)
-    log(tile)
-    -- log(mget(0,0))
     has_flag=fget(tile,tile_type)
     return has_flag
 end
@@ -15,8 +13,10 @@ function can_move(x,y)
 end
 
 function is_tomb_surrounded(x,y)
-    if not is_tile(foot,x,y) then 
+    if is_tile(flags.foot,x,y) then 
+        return true
+    else
         return false
     end
-    return true
+    
 end

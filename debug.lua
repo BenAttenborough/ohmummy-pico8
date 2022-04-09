@@ -1,3 +1,3 @@
 function log(str)
-    printh(str, logfile, true)
+    printh(str, logfile)
 end
