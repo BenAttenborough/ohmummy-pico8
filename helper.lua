@@ -1,7 +1,8 @@
 Debug = {}
 
-function Debug.Log(str)
-    printh(str, logfile)
+function Debug.log(str, overwrite)
+   overwrite = overwrite or false
+   printh(str, logfile, overwrite)
 end
 
 function Debug.dump(o)

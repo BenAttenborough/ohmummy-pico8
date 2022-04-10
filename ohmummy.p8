@@ -3,7 +3,7 @@ version 35
 __lua__
 #include globals.lua
 #include main.lua
-#include debug.lua
+#include helper.lua
 #include map.lua
 #include player.lua
 __gfx__
