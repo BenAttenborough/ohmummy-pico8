@@ -1,4 +1,4 @@
-cellSize = 8
+CellSize = 8
 
 --flags
 flags={
