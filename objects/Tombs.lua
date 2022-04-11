@@ -27,13 +27,26 @@ end
 --     -- return is_tomb_surrounded(self.x, self.y)
 -- end
 
--- function Tomb:test()
---     return mget(1,1)
--- end
-
 function Tomb:isSurrounded()
-    for i = self.x, self.x + 2 do
-        if mget(i,self.y) > 4 then
+    for i = self.x, self.x + 3 do
+        if fget(mget(i,self.y),1) ~= true then
+            return false
+        end
+    end
+    if fget(mget(self.x,self.y+1),1) ~= true then
+        return false
+    end
+    if fget(mget(self.x,self.y+2),1) ~= true then
+        return false
+    end
+    if fget(mget(self.x+3,self.y+1),1) ~= true then
+        return false
+    end
+    if fget(mget(self.x+3,self.y+2),1) ~= true then
+        return false
+    end
+    for i = self.x, self.x + 3 do
+        if fget(mget(i,self.y+3),1) ~= true then
             return false
         end
     end
