@@ -9,14 +9,5 @@ function is_tile(tile_type,x,y)
 end
 
 function can_move(x,y)
-    return not is_tile(flags.wall,x,y)
-end
-
-function is_tomb_surrounded(x,y)
-    if is_tile(flags.foot,x,y) then 
-        return true
-    else
-        return false
-    end
-    
+    return not is_tile(Flags.wall,x,y)
 end

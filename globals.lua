@@ -1,7 +1,7 @@
 CellSize = 8
 
 --flags
-flags={
+Flags={
     wall=0,
     foot=1
 }

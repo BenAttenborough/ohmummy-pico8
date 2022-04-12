@@ -1,15 +1,8 @@
 luaunit = require('luaunit')
+require "globals"
 require "tests.mocks.pico"
-require "objects.Tombs"
+require "objects.Tomb"
 require "helper"
-
--- function testTombs()
---     local tomb = Tomb:init({x = 3, y = 3})
---     print(Debug.GobalString)
---     print(Debug.dump(tomb:isSurrounded()))
--- end
-
-
 
 function testIsSurrounded()
     -- Mock grid to represent surrounded tomb
