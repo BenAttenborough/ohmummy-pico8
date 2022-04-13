@@ -16,3 +16,19 @@ Items={
     mummy=4,
     empty=5
 }
+
+Buttons={
+    left=0,
+    right=1,
+    up=2,
+    down=3,
+    o=4,
+    x=5
+}
+
+Directions={
+    left=0,
+    right=1,
+    up=2,
+    down=3
+}
