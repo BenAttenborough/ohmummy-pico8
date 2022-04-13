@@ -2,6 +2,7 @@ function _init()
     Debug.log("Game initialised", true)
     player=Player
     tombs=Tombs:init()
+    ui=Ui:init()
 end
 
 function _update()
@@ -9,8 +10,9 @@ function _update()
     tombs:update()
 end
 
-function _draw() 
+function _draw()
     cls()
     draw_map()
     player:draw()
+    ui:draw()
 end

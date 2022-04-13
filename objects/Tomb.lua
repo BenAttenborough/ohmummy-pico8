@@ -38,11 +38,33 @@ function Tomb:isSurrounded()
     return true
 end
 
+function Tomb:setTombGraphic(type)
+    local offset = 2
+    local firstSprite = 33
+    local revealedSprite = firstSprite
+    if type == Items.treasure then revealedSprite = firstSprite end
+    if type == Items.ankh then revealedSprite = firstSprite + offset end
+    if type == Items.coffin then revealedSprite = firstSprite + (offset * 2) end
+    if type == Items.key then revealedSprite = firstSprite + (offset * 3) end
+    if type == Items.mummy then revealedSprite = firstSprite + (offset * 4) end
+    if type == Items.empty then revealedSprite = firstSprite + (offset * 5) end
+    mset(self.x+1,self.y+1,revealedSprite)
+    mset(self.x+2,self.y+1,revealedSprite+1)
+    mset(self.x+1,self.y+2,revealedSprite+16)
+    mset(self.x+2,self.y+2,revealedSprite+17)
+end
+
 function Tomb:open()
     self.isOpen = true
-    mset(self.x+1,self.y+1,33)
-    mset(self.x+2,self.y+1,34)
-    mset(self.x+1,self.y+2,49)
-    mset(self.x+2,self.y+2,50)
+    self:setTombGraphic(self.type)
     sfx(0)
+    if self.type == Items.treasure then
+        ui:addScore(50)
+    elseif self.type == Items.key then
+        ui:addScore(75)
+    elseif self.type == Items.ankh then
+        ui:addScore(100)
+    elseif self.type == Items.coffin then
+        ui:addScore(200)
+    end
 end
