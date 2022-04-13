@@ -8,6 +8,10 @@ function is_tile(tile_type,x,y)
     return has_flag
 end
 
+local function is_in_bounds(x,y)
+    return x >= Bounds.left and x <= Bounds.right and y >= Bounds.up and y <= Bounds.down
+end
+
 function can_move(x,y)
-    return not is_tile(Flags.wall,x,y)
+    return not is_tile(Flags.wall,x,y) and is_in_bounds(x,y)
 end

@@ -32,3 +32,10 @@ Directions={
     up=2,
     down=3
 }
+
+Bounds={
+    left=0,
+    right=15,
+    up=3,
+    down=15
+}
