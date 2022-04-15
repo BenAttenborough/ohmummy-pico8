@@ -7,7 +7,8 @@ function Ui:init()
 end
 
 function Ui:draw()
-    print("score "..self.score, 8, 8, 9)
+    print("score ", 8, 9, Colours.orange)
+    print(self.score, 30, 9, Colours.red)
 end
 
 function Ui:addScore(val)

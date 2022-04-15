@@ -58,6 +58,10 @@ function Tomb:open()
     self.isOpen = true
     self:setTombGraphic(self.type)
     sfx(0)
+    if self.type ~= nil then
+        Debug.log("self.type "..self.type)
+    end
+    Debug.log("Items.treasure "..Items.treasure)
     if self.type == Items.treasure then
         ui:addScore(50)
     elseif self.type == Items.key then

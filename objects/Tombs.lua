@@ -23,9 +23,11 @@ function Tombs:init()
     local offSetY = 3
     local offSetTop = 3
     local seeding = tombSeeding()
-    local i = 0
+    local i = 1
+    
     for y=0, 3 do
         for x=0, 4 do
+            Debug.log("#self.container + 1 "..#self.container + 1)
             self.container[#self.container + 1] = Tomb:init({x = x * offSetX, y = y * offSetY + offSetTop, type = seeding[i]})
             i=i+1
         end

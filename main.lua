@@ -7,7 +7,8 @@ end
 
 function _update()
     player:move()
-    tombs:update()
+    -- tombs:update()
+    Time = (Time + 1) % 60
 end
 
 function _draw()
@@ -15,4 +16,5 @@ function _draw()
     draw_map()
     player:draw()
     ui:draw()
+    -- print(Time,10,120,Colours.red)
 end

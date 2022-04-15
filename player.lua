@@ -41,9 +41,12 @@ function Player:move()
     if (can_move(proposedX,proposedY)) then
         self.x = proposedX
         self.y = proposedY
-        mset(proposedX,proposedY,4)
+        if not fget(mget(proposedX,proposedY),4) then
+            mset(proposedX,proposedY,4)
+            tombs:update()
+        end
     else
-        sfx(0)
+        sfx(1)
     end
 end
 
@@ -59,6 +62,8 @@ function Player:draw()
     if self.step then
         sprite = sprite + 1
     end
+    palt(0,false)
     spr(sprite,self.x*CellSize,self.y*CellSize)
+    pal()
 end
 
